@@ -1,0 +1,5 @@
+<%= simple_form_for([@dose, @cocktail]) do |f| %>
+  <%= f.input :description, placeholder: "Quantity" %>
+  <%= f.association :ingredient, placeholder: "Ingredient" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<%= end %>
