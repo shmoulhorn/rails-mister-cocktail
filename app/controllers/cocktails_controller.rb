@@ -1,10 +1,11 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :destroy]
+  before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   def index
     @cocktails = Cocktail.all
   end
 
   def show
+
   end
 
   def new
@@ -15,7 +16,7 @@ class CocktailsController < ApplicationController
       @cocktail = Cocktail.new(cocktail_params)
 
     if @cocktail.save
-      redirect_to cocktail_index_path
+      redirect_to cocktails_path
     else
       render :new
     end
@@ -34,6 +35,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name)
+      params.require(:cocktail).permit(:name, :ingredients)
     end
 end

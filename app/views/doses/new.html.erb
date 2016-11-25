@@ -1,5 +1,8 @@
-<%= simple_form_for([@dose, @cocktail]) do |f| %>
-  <%= f.input :description, placeholder: "Quantity" %>
-  <%= f.association :ingredient, placeholder: "Ingredient" %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<%= end %>
+
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+<%= f.input :description, placeholder: "Quantity" %>
+<%= f.association :ingredient, placeholder: "Ingredient" %>
+<%= f.button :submit, class: "btn btn-primary" %>
+<%= link_to "go back to your cocktail", cocktail_path(@cocktail)  %>
+
+<% end %>

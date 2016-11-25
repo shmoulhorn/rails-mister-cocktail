@@ -1,8 +1,15 @@
 <h1>Cocktails</h1>
 
-<% @cocktails.each do |r| %>
-  <%= render "card", cocktail: r %>
+
+
+<% @cocktails.each do |c| %>
+  <%= link_to  cocktail_path(c) do %>
+    <%= render "card", cocktail: c %>
+  <% end %>
 <% end %>
+
+
+
 
 <br>
 

@@ -19,7 +19,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
 
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to new_cocktail_dose_path(@cocktail)
     # redirect_to cocktail_dose_index_path
   else
     render :new
